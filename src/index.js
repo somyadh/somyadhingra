@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import Card from './components/card'
+import Blog from './pages/blog'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/blogs",
-    element: <Card />,
+    element: < Blog />,
   },
 ]);
 
