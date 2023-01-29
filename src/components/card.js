@@ -2,24 +2,24 @@ import {
   Center,Text,Image, Card, CardBody, CardFooter, Divider, 
 } from '@chakra-ui/react';
 
-export default function blogPostWithImage() {
+export default function blogPostWithImage({props}) {
   return (
     <Center>
       <Card maxW='sm'>
         <CardBody>
           <Image
-            src='./imagineArtHere.jpg'
-            alt='Imagine Art Here'
+            src={props.image}
+            alt={props.imageAltText}
             borderRadius='lg'
           />
           <Text color="teal.500">
-            Watch this space!
+           {props.summary}
           </Text>
         </CardBody>
         <Divider />
         <CardFooter>
           <Text color="teal.500">
-            #blog
+          {props.tags}
           </Text>
         </CardFooter>
       </Card>
