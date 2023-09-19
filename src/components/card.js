@@ -1,5 +1,5 @@
 import {
-  Center,Text,Image, Card, CardBody, CardFooter, Divider, 
+  Center,Text,Image, Card, CardBody, CardFooter, Divider, Tag
 } from '@chakra-ui/react';
 
 export default function blogPostWithImage({props}) {
@@ -18,9 +18,9 @@ export default function blogPostWithImage({props}) {
         </CardBody>
         <Divider />
         <CardFooter>
-          <Text color="teal.500">
-          {props.tags}
-          </Text>
+          <Tag size="md" key="md" variant='subtle' color="teal.500" >
+            {props.tags}
+          </Tag>
         </CardFooter>
       </Card>
     </Center>
