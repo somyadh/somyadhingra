@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import Blog from './pages/blog'
+import CV from './pages/resume'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/blogs",
     element: < Blog />,
+  },
+  {
+    path: "/cv",
+    element: < CV />,
   },
 ]);
 

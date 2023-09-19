@@ -1,0 +1,109 @@
+.OUTERDIV {
+  position: absolute;
+  width: 70%;
+  left: 52%;
+  top: 50%;
+  transform: translate(-50%, -35%);
+  color: #d0d7dd;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  border-top: 5px solid #000;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.ROLE {
+  font-family: 'Arial';
+  font-size: 24px;
+  line-height: 40px;
+  color: #101214;
+  text-align: center; 
+  white-space: nowrap; 
+  font-weight: normal;
+  margin-bottom: 30px;
+
+}
+
+.FULLNAME {
+  font-family: 'Arial';
+  line-height: 10px;
+  color: #101214;
+  text-align: center; 
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 15px;
+  margin-top: 100px;
+  margin-bottom: 5px;
+}
+
+
+.EXPDETAIL {
+  position: relative;
+  width: 70%;
+  float: left;
+  font-family: 'Arial';
+  color: #73808D;
+  text-align: left;
+  word-wrap: break-word;
+  letter-spacing: 1px;
+  max-height: 100%;
+  overflow-y: auto;
+  font-weight: bold;
+}
+
+/* Experiences */
+.EXPDETAIL > .SECTION_HEADING {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 28px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.EXPDETAIL > .SECTION_ROLE {
+  color: #101214;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 8px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.EXPDETAIL > .SECTION_COMPANY_NAME {
+  color: #101214;
+  font-weight: normal;
+  line-height: 8px;
+  font-size: 13px;
+}
+
+.EXPDETAIL > .SECTION_TIMELINE {
+  font-weight: normal;
+  line-height: 8px;
+  font-size: 12px;
+}
+
+.EXPDETAIL > .SECTION_RESPONSIBILITIES {
+  color: #101214;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+.SIDEBAR {
+  color: #73808D;
+  font-size: 15px;
+  line-height: 18px;
+  width: 25%;
+  float: right;
+  word-wrap: break-word;
+  text-align: left;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-left: 5px;
+}
+
+.SIDEBAR > .SIDEBAR_HEADING {
+  font-weight: bold;
+}
