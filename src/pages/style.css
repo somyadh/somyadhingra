@@ -1,0 +1,121 @@
+.OUTERDIV {
+  position: relative;
+  width: 70%;
+  left: 52%;
+  top: 50%;
+  transform: translate(-50%, -35%);
+  color: #d0d7dd;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.OUTERDIV::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  padding: 400px;
+}
+
+/* Header */
+.ROLE {
+  font-family: 'Arial';
+  font-size: 24px;
+  line-height: 40px;
+  color: #319795;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: normal;
+  margin-bottom: 30px;
+
+}
+
+.FULLNAME {
+  font-family: 'Arial';
+  line-height: 10px;
+  color: #101214;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 15px;
+  margin-top: 100px;
+  margin-bottom: 5px;
+}
+
+
+.EXPDETAIL {
+  position: relative;
+  width: 70%;
+  float: left;
+  font-family: 'Arial';
+  color: #73808D;
+  text-align: left;
+  word-wrap: break-word;
+  letter-spacing: 1px;
+  max-height: 100%;
+  overflow-y: auto;
+  font-weight: bold;
+}
+
+/* Experiences */
+.EXPDETAIL>.SECTION_HEADING {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 28px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.EXPDETAIL>.SECTION_ROLE {
+  color: #319795;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.EXPDETAIL>.SECTION_COMPANY_NAME {
+  color: #319795;
+  font-weight: normal;
+  line-height: 18px;
+  font-size: 13px;
+}
+
+.EXPDETAIL>.SECTION_TIMELINE {
+  font-weight: normal;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.EXPDETAIL>.SECTION_RESPONSIBILITIES {
+  color: #319795;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+.SIDEBAR {
+  color: #73808D;
+  font-size: 15px;
+  line-height: 18px;
+  width: 25%;
+  float: right;
+  word-wrap: break-word;
+  text-align: left;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-top: 40px;
+}
+
+.SIDEBAR>.SIDEBAR_HEADING {
+  color: #319795;
+  font-weight: bold;
+}
