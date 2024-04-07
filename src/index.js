@@ -7,11 +7,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import BlogPost from './pages/blogPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+  },
+  {
+    path: "/blogs/:blogId",
+    element: < BlogPost />,
   },
   {
     path: "/blogs",

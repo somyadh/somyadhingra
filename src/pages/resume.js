@@ -8,7 +8,7 @@ import React from "react";
 function CV() {
   return (
     <ChakraProvider theme={theme}>
-      <Header></Header>
+      <Header text={"Somya Dhingra"}></Header>
       <div className="OUTERDIV">
         <div className="EXPDETAIL">
           <p className="SECTION_HEADING">Experience</p>

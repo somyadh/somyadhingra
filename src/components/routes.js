@@ -1,6 +1,5 @@
 import React, { lazy } from 'react';
 
-
 export const Routes= [
     {
         path: '/',
@@ -10,10 +9,18 @@ export const Routes= [
         fallback: <div> Loading... </div>
     },
     {
-        path: '/blogs',
-        component: lazy(() => import('../pages/blog')),
-        exact: false,
+        path: '/blogs/:blogId',
+        component: lazy(() => import('../pages/blogPage')),
+        exact: true,
         private: false,
         fallback: <div> Loading... </div>
     },
+    {
+        path: '/blogs',
+        component: lazy(() => import('../pages/blog')),
+        exact: true,
+        private: false,
+        fallback: <div> Loading... </div>
+    }
+   
 ]
