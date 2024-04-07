@@ -1,20 +1,28 @@
 import React from 'react';
 import {
     Heading,
-    VStack,
-    Grid
+    Center,
+    Flex,
+    Spacer,
+    Box
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 
-function Header() {
+function Header({ text }) {
     return (
-        <Grid p={3}>
-            <ColorModeSwitcher justifySelf="flex-end" />
-            <VStack spacing={10}>
-                <Heading color="teal.500">Somya Dhingra</Heading>
-            </VStack>
-        </Grid>
+        <Center>
+            <Flex width='100%'>
+                <Spacer />
+                <Box p='4'>
+                    <Heading justifyContent={'center'} color="teal.500">{text}</Heading>
+                </Box>
+                <Spacer />
+                <Box p='4'>
+                    <ColorModeSwitcher />
+                </Box>
+            </Flex>
+        </Center>
     );
 }
 
