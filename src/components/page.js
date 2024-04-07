@@ -8,8 +8,7 @@ export const Page = ({ heading, content }) => {
         <Center>
             <VStack spacing={4}>
                 <Box w="80%" p={4} color={'teal.500'}>
-                <Header></Header>
-                    {/* <Header text={heading}></Header> */}
+                    <Header text={heading}></Header>
                 </Box>
                 <Box w="80%" p={4} borderWidth={1} borderRadius="lg" mt={10} color={'teal.500'}>
                     <Prose dangerouslySetInnerHTML={{ __html: content }} />
