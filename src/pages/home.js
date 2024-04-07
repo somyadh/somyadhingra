@@ -22,14 +22,13 @@ function Home() {
         <Box p='8'></Box>
         <Logo h="40vmin" pointerEvents="none" />
           <Flex>
-            <Box p='4' maxW='sm'>
-              <Link href="https://somyadh.github.io"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-              color="teal.500"> Resume
-              </Link>
-            </Box>
+              <Box p='4' maxW='sm'>
+                <Link as={RouterLink}
+                  to={'cv'}
+                  fontSize="2xl"
+                  color="teal.500"> Resume
+                </Link>
+              </Box>
             <Spacer />
             <Box p='4'>
               <Link as={RouterLink}
