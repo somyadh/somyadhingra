@@ -1,13 +1,14 @@
 exports.blogPosts = [
     {
         "uid": 1,
-        "heading": "Hello World",
-        "summary": "I swear there was an original art here",
-        "fullText": "This is first post of this blog.",
+        "heading": " Chronicles of a Tech Enthusiast: Prepare to be Amazed (or Mildly Entertained)",
+        "summary": "Watch a tech enthusiast bumble through it",
+        "fullText": "<html><head><title>Tech Noob's Adventures: Prepare to be Amazed (or Mildly Entertained)</title></head><body><p>As an aspiring tech professional, I've always been fascinated by the rapid pace of innovation in the industry.</p><p>From the latest advancements in cloud computing and artificial intelligence to the emergence of cutting-edge web technologies, there's always something new to explore and learn.</p><p>That's why I've decided to start this technical blog - to share my journey of discovery and the insights I gain along the way.</p><h3>My primary goals in writing this blog are:</h3><ol><li><strong>Personal Knowledge Capture</strong>: As I delve into new topics through online courses, industry blogs, and hands-on projects, I want to distill the key learnings into concise, easy-to-reference blog posts. This will help me build a personal knowledge base that I can revisit and build upon over time.</li><li><strong>Building an Online Presence</strong>: By documenting my technical growth and sharing my experiences, I hope to establish an online presence that reflects my skills and expertise. I hope this can be a valuable asset in the tech community, allowing me to connect with like-minded individuals and showcase my passion for the field.</li><li><strong>Fostering Curiosity</strong>: I want to craft blog posts that pique the reader's interest and encourage them to explore the topics further. With our reducing timespan of attention my aim is to provide just enough information to get someone excited about a new technology or concept or even a simple fact.</li></ol><p>Twice a month, you can expect to see blog posts covering a wide range of technical subjects. It can be anything under the sun that picques my intrest, or just something I want to remember and refer back to in future</p><p>Whether you're an experienced engineer, a curious hobbyist, or an aspiring tech professional, I invite you to join me on this journey of exploration and learning.</p><p>I'm excited to connect with like-minded individuals, exchange ideas, and together, push the boundaries of what's possible in the world of technology.</p><p>So, let's get started! I can't wait to share my first technical deep dive with you.</p></body></html>",
         "likes": 0,
         "link": "/1",
-        "image": "./imagineArtHere.jpg",
-        "imageAltText": "Imagine Art Here",
-        "tags": '#NoArtBecauseBusinessRequirementsChanged'
+        "image": "./techNoobGirl.jpg",
+        "imageAltText": "ITech Noob's Adventures",
+        posted_on: '07/04/2024'
     }
+    
 ]
