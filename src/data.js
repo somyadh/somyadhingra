@@ -8,7 +8,7 @@ exports.blogPosts = [
         "link": "/1",
         "image": "./techNoobGirl.jpg",
         "imageAltText": "ITech Noob's Adventures",
-        posted_on: '07/04/2024'
+        "posted_on": '07/04/2024'
     },
     {
         "uid": 2,
@@ -19,7 +19,7 @@ exports.blogPosts = [
         "link": "/2",
         "image": "./techNoobGirl.jpg",
         "imageAltText": "ITech Noob's Adventures",
-        posted_on: '07/04/2024'
+        "posted_on": '20/04/2024'
     }
     
 ]

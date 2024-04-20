@@ -5,7 +5,8 @@ import Cards from '../components/card';
 import { blogPosts } from '../data'
 
 function Home() {
-  let blogs = blogPosts.map(x => {
+  let sortedBlogPosts = blogPosts.sort((x,y) => y.uid - x.uid)
+  let blogs = sortedBlogPosts.map(x => {
     return <Cards key={x.uid} props={x} ></Cards>
   })
   return (
