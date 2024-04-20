@@ -11,7 +11,7 @@ export default function blogPostWithImage({props}) {
         to={`/blogs/${props.uid}`}
         fontSize="2xl"
         color="teal.500">
-        <Card maxW='xs'>
+        <Card maxW='xs' boxSize="sm">
         <CardBody>
           <Image 
             src={props.image}
