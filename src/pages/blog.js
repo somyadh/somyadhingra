@@ -12,7 +12,7 @@ function Home() {
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Header text="Somya Dhingra"></Header>
-        <SimpleGrid minChildWidth='sm' spacing='40px' mt={10} >
+        <SimpleGrid minChildWidth='xs' spacing={50} mt={10}>
           {blogs}
         </SimpleGrid>
       </Box>
