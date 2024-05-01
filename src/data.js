@@ -20,6 +20,17 @@ exports.blogPosts = [
         "image": "./techNoobGirl.jpg",
         "imageAltText": "ITech Noob's Adventures",
         "posted_on": '20/04/2024'
+    },
+    {
+        "uid": 3,
+        "heading": "Node.js, Docker, and Alpine Linux: A Tale of Compatibility Woes",
+        "summary": "The Alpine Linux Deception",
+        "fullText": "<html><head><title>Node.js, Docker, and Alpine Linux: A Tale of Compatibility Woes</title>\n</head>\n<body> <p>Upgrading Node.js backend from version 10 to 16 and containerizing it with Docker? Easy peasy, right? Well, that's what I thought until I decided to use Alpine Linux for a smaller image size. Little did I know, I was in for a wild ride!</p>\n\n    <p>Issues started popping up left and right, from missing header files to module errors. I felt like I was playing whack-a-mole with error messages. The most memorable ones?</p>\n\n    <pre><code>Failed to load gRPC binary module because it was not installed for the current system\nExpected directory: node-v93-linux-arm64-musl\nFound: [node-v64-darwin-x64-unknown] </code></pre>\n\n    <p>And another one:</p>\n\n    <pre><code>./vendor/abseil-cpp/absl/base/internal/direct_mmap.h:36:10: fatal error: linux/unistd.h: No such file or directory\n308.0 npm ERR! 36 | #include &lt;linux/unistd.h&gt; </code></pre>\n\n    <p>Turns out, the culprit was: Alpine Linux uses musl instead of the more common glibc library. While musl is lightweight and perfect for containers, it can cause compatibility issues. In my case it was <code>node-gyp</code> which required <code>glibc</code></p>\n\n    <p>Alpine has some other issues as well which I didn't encounter but Martin Heinz has written a detailed <a href=\"https://martinheinz.dev/blog/92\">blog</a> around it, including my issue</p>\n\n    <p>In my case I used multi-stage build process to solve this issue. Generally, in the first stage, we use a larger base image (like a full-fledged Debian or Ubuntu) to build and compile app. Then, in the second stage, we copy the compiled artifacts into a Alpine Linux image for production.</p>\n\n    <p>But I wanted even more adventure so I hunted down the required packages in my case it was - <code>libc-dev</code> and <code>linux-headers</code> and used alpine as my base image as well:</p>\n\n    <pre><code># Stage 1: Build the application\nFROM node:16.20.1-alpine as builder\nENV NODE_ENV=production\nWORKDIR /app\nCOPY [\"package.json\", \"./\"]\n\n# Install the necessary build dependencies in the builder image check drive\nRUN apk add --no-cache --virtual .gyp python3 make g++ libc-dev linux-headers \\\n    &amp;&amp; npm install --legacy-peer-deps --production \\\n    &amp;&amp; npm prune --production \\\n    &amp;&amp; apk del .gyp python3 make g++ libc-dev linux-headers\nCOPY . .\n\n# Stage 2: Create a smaller production image\nFROM node:16.20.1-alpine\nENV NODE_ENV=production\nWORKDIR /app\n\n# Copy only the necessary built artifacts and dependencies from the builder stage\nCOPY --from=builder /app .\n\nEXPOSE 9001\nCMD [ \"node\", \"server.js\" ]  </code></pre>\n\n    <p>Ohh by the way this never went to production because of some other unrelated issue. But it taught me a valuable lesson: always be prepared for compatibility adventures when using Alpine Linux!</p>\n</body>\n</html>",
+         "likes": 0,
+        "link": "/3",
+        "image": "./container-issue.jpg",
+        "imageAltText": "Girl trying to containerise software",
+        "posted_on": '01/05/2024'
     }
     
 ]
