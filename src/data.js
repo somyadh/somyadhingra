@@ -31,6 +31,61 @@ exports.blogPosts = [
         "image": "./container-issue.jpg",
         "imageAltText": "Girl trying to containerise software",
         "posted_on": '01/05/2024'
+    },
+    {
+        "uid": 4,
+        "heading": "Automating Video Transcription with Python and Whisper",
+        "summary": " Whisper AI: Saves the day",
+        "fullText": `<html>
+        <head>
+            <title>Automating Video Transcription with Python and Whisper</title>
+        </head>
+        <body>
+            <p>I often revisit educational videos or courses to reinforce my understanding. However, as a non-binge-watcher, my
+                preferred mode of studying is reading. Re-watching videos can be time-consuming and prone to missing important
+                details.</p>
+            <p>With a collection of videos on my hard disk, I wanted a solution that could transcribe these videos without
+                spending much money and preferably that can be done on my laptop. My videos were in English, featuring a single
+                person speaking clearly, making it a fairly simple case for transcription.</p>
+            <p>That's how <strong>whisper-video-transcribe</strong> came about. It's a simple Python-based video transcriber that takes in a
+                folder of video files and does the following for each video:</p>
+            <h4>1. Audio Extraction:</h4>
+            <ul>
+                <li>Extracts audio from video</li>
+                <li>Each video of mine were approximately 30 minutes long and ranged from 500MB to 1.2GB.</li>
+                <li>To optimize accuracy, processing time, and show some mercy to my laptop, I extracted audio from the videos using
+                    FFmpeg, creating WAV files.</li>
+            </ul>
+            <pre><code class="language-python"># Extract audio using FFmpeg \n subprocess.call(['ffmpeg', '-i', video_path, '-vn', '-acodec', 'pcm_s16le', '-ar', '16000', '-ac', '1', audio_path])</code></pre>
+            <h4>2. Transcription:</h4>
+            <ul>
+                <li>The extracted audio is then transcribed using the OpenAI Whisper library.</li>
+                <li>After trying multiple models, I found "medium" to work best for me, despite the longer processing time.
+                </li>
+                <li>For someone who wants to transcribe English videos and has less time on their hands but can handle slightly
+                    less accurate results OR has a laptop with a lower configuration, the "base" model can provide a good
+                    balance between accuracy and speed</li>
+                <li>You can find out more about this and many other features that Whisper provides at <a
+                        href="https://github.com/openai/whisper" target="_blank">https://github.com/openai/whisper</a>.</li>
+            </ul>
+            <pre><code class="language-python"># Use Whisper to transcribe \n model = whisper.load_model("base") \n result = model.transcribe(audio_path)</code></pre>
+            <h4>3. Segment Generation:</h4>
+            <ul>
+                <li>Segment files with timing information are generated for easy navigation.</li>
+                <li>These JSON files allow me to locate the approximate timestamp where I feel something is inaccurate, enabling
+                    me to watch the video quickly and correct the transcriptions.</li>
+            </ul>
+            <p>Complete source code: <a href="https://github.com/somyadh/whisper-video-transcriber"
+                    target="_blank">https://github.com/somyadh/whisper-video-transcriber</a></p>
+            <p><strong>whisper-video-transcriber</strong> enabled quick skimming and easy reference for me,
+                saving hours of time that would otherwise be spent re-watching videos.</p>
+        </body>
+        </html>`,
+        "likes": 0,
+        "link": "/4",
+        "image": "./AISponsoredHappiness.jpg",
+        "imageAltText": "Girl Happy because of AI",
+        "posted_on": '14/05/2024'
     }
     
 ]
