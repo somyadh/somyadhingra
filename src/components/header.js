@@ -19,7 +19,6 @@ function Header({ text }) {
                 </Box>
                 <Spacer />
                 <Box p='4'>
-                    <ColorModeSwitcher />
                 </Box>
             </Flex>
         </Center>

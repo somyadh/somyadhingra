@@ -1,29 +1,28 @@
 import {
-  Center,Text,Image, Card, CardBody, Link
+  Center, Text, Image, Card, CardBody, Link
 } from '@chakra-ui/react';
-import {  NavLink as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 
 
-export default function blogPostWithImage({props}) {
+export default function blogPostWithImage({ props }) {
   return (
     <Center>
-    <Link as={RouterLink}
+      <Link as={RouterLink}
         to={`/blogs/${props.uid}`}
-        fontSize="2xl"
-        color="teal.500">
-        <Card maxW='xs' boxSize="sm">
-        <CardBody>
-          <Image 
-            src={props.image}
-            alt={props.imageAltText}
-            borderRadius='lg'
-          />
-          <Text color="teal.500">
-           {props.summary}
-          </Text>
-        </CardBody>
+        fontSize="2xl">
+        <Card maxW='xs' boxSize="xsm" variant="unstyled" background="beige.100">
+          <CardBody>
+            <Image
+              src={props.image}
+              alt={props.imageAltText}
+              borderRadius='lg'
+            />
+            <Text color="grey.600">
+              {props.summary}
+            </Text>
+          </CardBody>
         </Card>
-    </Link>
+      </Link>
     </Center>
   );
 }

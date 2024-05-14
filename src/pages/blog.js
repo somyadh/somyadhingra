@@ -1,8 +1,9 @@
 import React from 'react';
-import { ChakraProvider, Box, theme, SimpleGrid } from '@chakra-ui/react';
+import { ChakraProvider, Box, SimpleGrid } from '@chakra-ui/react';
 import Header from '../components/header'
 import Cards from '../components/card';
 import { blogPosts } from '../data'
+import theme from '../theme';
 
 function Home() {
   let sortedBlogPosts = blogPosts.sort((x,y) => y.uid - x.uid)

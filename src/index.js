@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: < Blog />,
   },
   {
-    path: "/cv",
+    path: "/about",
     element: < CV />,
   },
 ]);
