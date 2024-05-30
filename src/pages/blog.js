@@ -1,24 +1,24 @@
 import React from 'react';
-import { ChakraProvider, Box, theme, SimpleGrid } from '@chakra-ui/react';
+import { Box, SimpleGrid, useBreakpointValue} from '@chakra-ui/react';
 import Header from '../components/header'
-import Cards from '../components/card';
+import BlogPostWithImage from '../components/blogPostWithImage';
 import { blogPosts } from '../data'
 
-function Home() {
-  let sortedBlogPosts = blogPosts.sort((x,y) => y.uid - x.uid)
-  let blogs = sortedBlogPosts.map(x => {
-    return <Cards key={x.uid} props={x} ></Cards>
-  })
+function Blog() {
+  const sortedBlogPosts = blogPosts.sort((x, y) => y.uid - x.uid);
+  const latestBlogPosts = sortedBlogPosts.slice(0, 4);
+  const blogs = latestBlogPosts.map(x => <BlogPostWithImage key={x.uid} props={x} />);
+  const containerWidth = useBreakpointValue({ base: '100%', md: '80%', lg: '70%' });
+  const containerPadding = useBreakpointValue({ base: '1rem', md: '2rem', lg: '3rem' });
+
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
+      <Box maxWidth={containerWidth} margin="auto" padding={containerPadding}>
         <Header text="Somya Dhingra"></Header>
         <SimpleGrid minChildWidth='xs' spacing={50} mt={10}>
           {blogs}
         </SimpleGrid>
       </Box>
-    </ChakraProvider>
   );
 }
 
-export default Home;
+export default Blog;

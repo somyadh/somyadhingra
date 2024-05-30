@@ -6,7 +6,6 @@ import {
     Spacer,
     Box
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from '../ColorModeSwitcher';
 
 
 function Header({ text }) {
@@ -15,11 +14,10 @@ function Header({ text }) {
             <Flex width='100%'>
                 <Spacer />
                 <Box p='4'>
-                    <Heading justifyContent={'center'} color="teal.500">{text}</Heading>
+                    <Heading justifyContent={'center'} color="light.heading">{text}</Heading>
                 </Box>
                 <Spacer />
                 <Box p='4'>
-                    <ColorModeSwitcher />
                 </Box>
             </Flex>
         </Center>

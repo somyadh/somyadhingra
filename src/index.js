@@ -8,11 +8,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import BlogPost from './pages/blogPage';
+import theme from './theme';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/blogs/:blogId",
@@ -23,13 +25,17 @@ const router = createBrowserRouter([
     element: < Blog />,
   },
   {
-    path: "/cv",
+    path: "/about",
     element: < CV />,
   },
 ]);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
-root.render( <React.StrictMode>
-  <RouterProvider router={router} />
+root.render(<React.StrictMode>
+
+  <ChakraProvider theme={theme}>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <RouterProvider router={router} />
+  </ChakraProvider>
 </React.StrictMode>);

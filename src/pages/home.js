@@ -1,48 +1,86 @@
 import React from 'react';
 import {
-  ChakraProvider,
   Box,
-  Link,
   VStack,
+  Heading,
+  Text,
+  Button,
   Flex,
-  Spacer,
-  theme,
-  Center,
+  SimpleGrid,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import { Logo } from "../Logo"
-import {  NavLink as RouterLink } from 'react-router-dom';
-import Header  from '../components/header'
+import { blogPosts } from '../data';
+import BlogPostWithImage from '../components/blogPostWithImage';
+import Header from '../components/header';
+import { NavLink as RouterLink } from 'react-router-dom';
 
 function Home() {
-    return (
-      <ChakraProvider theme={theme}>
-        <Header></Header>
-        <Center>
-        <VStack alignItems='center'>
-        <Box p='8'></Box>
-        <Logo h="40vmin" pointerEvents="none" />
-          <Flex>
-              <Box p='4' maxW='sm'>
-                <Link as={RouterLink}
-                  to={'cv'}
-                  fontSize="2xl"
-                  color="teal.500"> Resume
-                </Link>
-              </Box>
-            <Spacer />
-            <Box p='4'>
-              <Link as={RouterLink}
-              to={'blogs'}
-              fontSize="2xl"
-              color="teal.500"> Blog
-              </Link>
-            </Box>
-          </Flex>
-        </VStack>
-        </Center>
-      </ChakraProvider>
-    );
-  }
-  
-export default Home;
+  const sortedBlogPosts = blogPosts.sort((x, y) => y.uid - x.uid);
+  const latestBlogPosts = sortedBlogPosts.slice(0, 4);
+  const blogs = latestBlogPosts.map(x => <BlogPostWithImage key={x.uid} props={x} />);
 
+  const headingColor = useColorModeValue('light.heading', 'dark.heading');
+  const textColor = useColorModeValue('light.text', 'dark.text');
+
+  return (
+    <>
+      <Header />
+      <Flex
+        direction="column"
+        align="center"
+        justify="center"
+        minHeight="100vh"
+        textAlign="center"
+        fontSize="xl"
+      >
+        <Heading
+          as="h1"
+          size="2xl"
+          color={headingColor}
+          mb={8}
+        >
+          Hi, I'm Somya Dhingra
+        </Heading>
+        <Box textAlign="center">
+          <Text fontSize="xl" color={textColor}>
+            I'm a passionate technical writer sharing my knowledge and insights through my blog.
+          </Text>
+        </Box>
+        <VStack mt={10}>
+          <Heading as="h2" size="xl" mb={8}>
+            Latest Blog Posts
+          </Heading>
+          <SimpleGrid columns={[1, 2]} spacing={10}>
+            {blogs}
+          </SimpleGrid>
+          <SimpleGrid columns={[1, 2]} spacing={10}>
+            <Button
+              as={RouterLink}
+              to="/blogs"
+              bg="gray.700"
+              color="white"
+              _hover={{ bg: 'gray.600' }}
+              size="lg"
+              mt={10}
+            >
+              Read More Blog Posts
+            </Button>
+            <Button
+              as={RouterLink}
+              to="/about"
+              bg="gray.700"
+              color="white"
+              _hover={{ bg: 'gray.600' }}
+              size="lg"
+              mt={10}
+            >
+              Learn More About Me
+            </Button>
+          </SimpleGrid>
+        </VStack>
+      </Flex>
+    </>
+  );
+}
+
+export default Home;
