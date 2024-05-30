@@ -1,30 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans);
+
+*{
+  font-family: "DM Sans", sans-serif !important ;
+}
+
+
 .OUTERDIV {
 	position: relative;
 	width: 80%;
 	left: 10%;
 	top: 30%;
-	color: #d0d7dd;
 	align-items: center;
 	right: 10%;
 }
 
 /* Header */
 .ROLE {
-  font-family: 'Arial';
   font-size: 24px;
   line-height: 40px;
-  color: #319795;
   text-align: center;
   white-space: nowrap;
   font-weight: normal;
   margin-bottom: 30px;
-
 }
 
 .FULLNAME {
-  font-family: 'Arial';
   line-height: 10px;
-  color: #101214;
   text-align: center;
   white-space: nowrap;
   font-weight: bold;
@@ -39,8 +40,6 @@
   position: relative;
   width: 70%;
   float: left;
-  font-family: 'Arial';
-  color: #73808D;
   text-align: left;
   word-wrap: break-word;
   letter-spacing: 1px;
@@ -59,14 +58,12 @@
 }
 
 .EXPDETAIL>.SECTION_ROLE {
-  color: #319795;
   font-weight: bold;
   font-size: 14px;
   line-height: 18px;
 }
 
 .EXPDETAIL>.SECTION_COMPANY_NAME {
-  color: #319795;
   font-weight: normal;
   line-height: 18px;
   font-size: 13px;
@@ -79,7 +76,6 @@
 }
 
 .EXPDETAIL>.SECTION_RESPONSIBILITIES {
-  color: #319795;
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
@@ -87,7 +83,6 @@
 
 
 .SIDEBAR {
-  color: #73808D;
   font-size: 15px;
   line-height: 18px;
   width: 25%;
@@ -101,6 +96,5 @@
 }
 
 .SIDEBAR>.SIDEBAR_HEADING {
-  color: #319795;
   font-weight: bold;
 }

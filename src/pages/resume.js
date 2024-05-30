@@ -1,5 +1,4 @@
 import "./style.css";
-import { ChakraProvider, theme } from '@chakra-ui/react';
 import Header from '../components/header'
 import { EXPERIENCE } from "../components/experience";
 import { SIDEBAR } from "../components/sidebar";
@@ -7,7 +6,7 @@ import React from "react";
 
 function CV() {
   return (
-    <ChakraProvider theme={theme}>
+    <>
       <Header text={"Somya Dhingra"}></Header>
       <div className="OUTERDIV">
         <div className="EXPDETAIL">
@@ -70,7 +69,7 @@ function CV() {
               github.com/somyadh`} />
         </div>
       </div>
-    </ChakraProvider>
+    </>
   );
 };
 
