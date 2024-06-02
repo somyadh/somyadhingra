@@ -86,6 +86,50 @@ exports.blogPosts = [
         "image": "./AISponsoredHappiness.jpg",
         "imageAltText": "Girl Happy because of AI",
         "posted_on": '14/05/2024'
-    }
+    },
+    {
+        "uid": 5,
+        "heading": "Proxy vs Reverse Proxy: The Network Traffic Controllers",
+        "summary": "Who pulls the strings?",
+        "fullText": `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Proxy vs Reverse Proxy: The Network Traffic Controllers</title>
+        </head>
+        <body>
+            <p>Proxies and reverse proxies play crucial roles in network architecture, each serving unique purposes. Understanding their differences is essential for designing efficient and secure systems. Let's explore:</p>
+            <h4>Proxy: Client-Side Intermediary</h4>
+            <p>A proxy acts as an intermediary between a client and the internet, masking the client's identity. The server responds to the proxy, which relays the response back to the client.</p>
+            <ul>
+                <li>Anonymity: Hides the client's identity from servers.</li>
+                <li>Caching: Reduces server load and improves response times.</li>
+                <li>Access Control: Blocks unwanted sites based on predefined rules.</li>
+                <li>Geofencing: Restricts access based on geographical location.</li>
+            </ul>
+            <p><strong>Examples:</strong> HAProxy, Squid </p>
+            
+        
+            <h4>Reverse Proxy: Server-Side Gateway</h4>
+            <p>A reverse proxy sits between the internet and a server, receiving client requests and routing them to the appropriate server. The client remains unaware of the actual server handling the request.</p>
+            <ul>
+                <li>Load Balancing: Distributes requests across multiple servers for optimal performance.</li>
+                <li>Caching: Accelerates content delivery and reduces server load.</li>
+                <li>Backend Isolation: Hides internal server configuration from external clients.</li>
+                <li>Logging and Monitoring: Collects valuable log data for analysis and troubleshooting.</li>
+                <li>Canary Deployment: Enables gradual feature rollouts for testing and validation.</li>
+            </ul>
+            <p><strong>Examples:</strong> Cloudflare CDN, NGINX </p>
+           
+        
+            <h4>Load Balancer: A Reverse Proxy Variant</h4>
+            <p>Load balancers are specialized reverse proxies that distribute traffic among multiple servers based on server health and resource utilization.</p>
+        </body>
+        </html>
+        `,
+        "link": "/5",
+        "image": "./container-issue.jpg",
+        "imageAltText": "Girl trying to containerise software",
+        "posted_on": '02/06/2024'
+    },
     
 ]
