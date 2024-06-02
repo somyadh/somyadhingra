@@ -12,6 +12,7 @@ import {
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import Header from './header';
 
 function Page({ post }) {
   const bgColor = 'white';
@@ -32,9 +33,10 @@ function Page({ post }) {
 
   return (
     <Box backgroundColor={bgColor} minHeight="100vh">
+      <Header homeLink={true} aboutLink={true} blogsLink={true}></Header>
       <Box maxWidth={containerWidth} margin="auto" padding={containerPadding}>
         <VStack spacing={8} alignItems="start">
-          <Heading as="h1" size="2xl" color={headingColor} marginTop={{ base: '2rem', md: '4rem' }}>
+          <Heading as="h1" size="2xl" color={headingColor}>
             {post.heading}
           </Heading>
           <Flex alignItems="center">
