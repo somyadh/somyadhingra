@@ -12,7 +12,7 @@ function Blog() {
 
   return (
       <Box maxWidth={containerWidth} margin="auto" padding={containerPadding}>
-        <Header text="Somya Dhingra"></Header>
+        <Header text="Somya Dhingra" homeLink={true} aboutLink={true}></Header>
         <SimpleGrid minChildWidth='xs' spacing={50} mt={10}>
           {blogs}
         </SimpleGrid>

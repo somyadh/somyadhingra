@@ -7,7 +7,7 @@ import React from "react";
 function CV() {
   return (
     <>
-      <Header text={"Somya Dhingra"}></Header>
+      <Header text={"Somya Dhingra"} homeLink={true} blogsLink={true}></Header>
       <div className="OUTERDIV">
         <div className="EXPDETAIL">
           <p className="SECTION_HEADING">Experience</p>

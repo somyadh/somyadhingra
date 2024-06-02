@@ -24,7 +24,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <Flex
         direction="column"
         align="center"
@@ -32,6 +31,7 @@ function Home() {
         minHeight="100vh"
         textAlign="center"
         fontSize="xl"
+        mt={10}
       >
         <Heading
           as="h1"
