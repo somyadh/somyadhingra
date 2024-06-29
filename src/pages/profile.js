@@ -46,7 +46,7 @@ const ProfilePage = () => {
         <Flex>
           <SocialIcon icon={FaGithub} href="https://github.com/somyadh" />
           <SocialIcon icon={FaLinkedin} href="https://linkedin.com/in/somyadhingra" />
-          <SocialIcon icon={FaTwitter} href="https://twitter.com" />
+          <SocialIcon icon={FaTwitter} href="https://twitter.com/somyadhingra" />
         </Flex>
       </Flex>
 
