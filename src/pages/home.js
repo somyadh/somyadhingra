@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { blogPosts } from '../data';
 import BlogPostWithImage from '../components/blogPostWithImage';
-import Header from '../components/header';
 import { NavLink as RouterLink } from 'react-router-dom';
 
 function Home() {
