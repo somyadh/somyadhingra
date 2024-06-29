@@ -131,5 +131,48 @@ exports.blogPosts = [
         "imageAltText": "Girl trying to containerise software",
         "posted_on": '02/06/2024'
     },
+    {
+        "uid": 6,
+        "heading": "Node.js: Single threaded? Really?",
+        "summary": "Single thread, multiple requests, no sweat! Libuv at your service",
+        "fullText": `<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>Node.js: Single threaded? Really?</title>
+        </head>
+        <body>
+         <p>Node.js is known for its ability to handle multiple requests concurrently in a single thread. But how does it achieve this? To understand Node.js's concurrency model, we need to explore how threads are used at the operating system (OS) level and how Node.js leverages non-blocking I/O APIs and the Libuv library.</p>
+<h3>Thread Pools at OS level</h3>
+
+<p>The thread pool is a key component in handling different types of tasks:</p>
+
+<h4>1. Compute-Intensive Tasks</h4>
+
+<p>When dealing with compute-intensive tasks like encryption, the threads are exclusively dedicated to the task at hand, at OS level. For example, if there are 4 threads in the pool and 6 encryption requests, the first 4 requests will be processed simultaneously, while the remaining 2 will be queued until a thread becomes available.</p>
+
+<h4>2. I/O Tasks</h4>
+
+<p>For I/O tasks (network or file), OS provides non-blocking I/O APIs. If there are 6 I/O requests and 4 threads in the pool, all 6 requests can be processed simultaneously, as the threads will be reused by the OS during the waiting periods.</p>
+
+<h3>Libuv and Asynchronous I/O</h3>
+
+<p>Libuv is a cross-platform I/O library that provides an abstraction layer for these asynchronous I/O operations and is responsible for managing the thread pool.</p>
+
+<p>So now when:</p>
+
+<ul>
+  <li>Node.js receives an I/O request, it delegates the task to Libuv. Libuv registers the request with the OS and continues executing other code. Once the I/O operation is complete, the OS notifies Libuv, which then schedules the associated callback to be executed on the event loop.</li>
+  <li>For blocking operations, like encryption, Libuv automatically delegates the task to one of the threads in the thread pool.</li>
+</ul>
+
+<p>Node.js's ability to handle multiple requests concurrently in a single process is made possible by its efficient use of non-blocking I/O APIs, the Libuv library, and the event loop.</p>
+        </body>
+        </html>
+        `,
+        "link": "/6",
+        "image": "./nodejs-thread.jpg",
+        "imageAltText": "Girl trying to containerise software",
+        "posted_on": '29/06/2024'
+    },
     
 ]

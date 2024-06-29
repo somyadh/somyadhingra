@@ -7,7 +7,7 @@ import { blogPosts } from '../data'
 function Blog() {
   const sortedBlogPosts = blogPosts.sort((x, y) => y.uid - x.uid);
   const blogs = sortedBlogPosts.map(x => <BlogPostWithImage key={x.uid} props={x} />);
-  const containerWidth = useBreakpointValue({ base: '100%', md: '80%', lg: '70%' });
+  const containerWidth = useBreakpointValue({ base: '100%', md: '80%', lg: '80%' });
   const containerPadding = useBreakpointValue({ base: '1rem', md: '2rem', lg: '3rem' });
 
   return (
