@@ -171,8 +171,63 @@ exports.blogPosts = [
         `,
         "link": "/6",
         "image": "./nodejs-thread.jpg",
-        "imageAltText": "Girl trying to containerise software",
+        "imageAltText": "nodejs thread working",
         "posted_on": '29/06/2024'
     },
-    
+    {
+        "uid": 7,
+        "summary": "Local LLM meets iOS Shortcut to provide private AI assistant in your iPhone",
+        "heading": "The $700 AI Pin Killer: Your Existing Smartphone",
+        "fullText": `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The $700 AI Pin Killer: Your Existing Smartphone</title>
+</head>
+<body>
+
+    <p>The tech world is buzzing with "AI-powered" everything. Everybody is racing to get that "AI-powered" feature or product out in the market. Be it Google assistants, Siri Pro (yet to be made available for public) or full-fledged dedicated AI-enabled hardware.</p>
+
+    <p>Do we really need another device to carry around?</p>
+
+    <p>Why would I shell out $700+ for a Humane AI Pin or similar device, when I can get the same thing done on my existing smartphone!? And the cherry on the cake is I can even use open-source LLM models, self-host them without giving out my personal data to any other vendor.
+    And tech YouTuber MKBHD echoed exactly the same in his recent video (<a href="https://www.youtube.com/watch?v=sDIi95CqTiM">AI the Product vs AI the Feature</a>). A good watch if you haven't seen it.</p>
+
+    <p>So this weekend I thought, let's build it! This isn't about creating the sleekest AI assistant; it's about getting the AI capabilities right in my smartphone while having control over my data. Let me walk you through how I built a personal AI assistant using LLama 3, Ollama, Flask, and iOS Shortcuts.</p>
+
+    <h2>The Stack: Leveraging Open Source</h2>
+    <p>Here's what I used:</p>
+    <ul>
+        <li>LLama 3: Meta's open-source model</li>
+        <li>Ollama: A python tool for running LLMs locally</li>
+        <li>Flask: A lightweight Python web framework</li>
+        <li>iOS Shortcuts: Apple's powerful automation tool for iOS devices</li>
+    </ul>
+    <p>That's it! No shiny stuff. Just this stack allows me to run everything locally, ensuring my data never leaves my periphery.</p>
+
+    <h2>The Implementation: Simpler Than You Might Think</h2>
+    <p>Setting up LLama 3 with Ollama is surprisingly straightforward. The Flask API acts as a simple bridge between my iOS Shortcut and the LLM.
+    The iOS Shortcut is where the magic happens. It can access my current location, photos, or any other data I choose to share, package it up with my question (which I dictated to it), and send it to my local Flask web server. API invokes LLama 3 and returns reponse to iOS. Then we can use Siri's test to speech feature to read it out aloud.</p>
+
+    <h2>The Power of Local Processing</h2>
+    <p>Because everything runs locally, I have zero worries about what I'm sharing. Some things that I tried:</p>
+    <ol>
+        <li>Location-aware recommendations: Ask for dinner suggestions based on your current location.</li>
+        <li>Photo analysis: Have the AI analyze photos without uploading them anywhere.</li>
+        <li>Personal data processing: Query about personal documents or financial info without exposing data online.</li>
+    </ol>
+
+    <h2>Trade-offs and Challenges</h2>
+    <p>Of course, this DIY approach isn't without drawbacks. The responses aren't as polished as those from commercial AI services. At least not yet. And running an LLM locally is resource-intensive.</p>
+    <p>But here's the kicker: I never aimed to compete with Humane AI Pin or Rabbit R1 but just wanted to see if there is any use case for me personally that my smartphone cannot satisfy but these products can. For me, the answer was a straight no. And heck, I built this in a couple of hours over my free time while watching a K-drama.</p>
+    <p>Maybe we still need to evolve in terms of AI, in terms of hardware where we can do in-device processing (something Apple is looking to do in smartphones) and have a use case and proper audience for those products. Until then, I'm in team "AI as a feature".</p>
+</body>
+</html>
+        `,
+        "link": "/7",
+        "image": "./AI-in-device.jpg",
+        "imageAltText": "Dedicated AI hardware",
+        "posted_on": '13/07/2024'
+    },
 ]
