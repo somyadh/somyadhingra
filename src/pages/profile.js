@@ -40,7 +40,7 @@ const ProfilePage = () => {
         </Heading>
         
         <Text fontSize="xl" color={useColorModeValue("gray.600", "gray.300")} textAlign="center" mb={2}>
-          Software Developer II at LEAD SCHOOL
+          Software Developer III at ACALVIO
         </Text>
         
         <Flex>
@@ -70,10 +70,16 @@ const ProfilePage = () => {
 
         <ProfileCard title="Experience">
           <VStack align="start" spacing={4}>
+          <Box>
+              <Text fontWeight="bold">ACALVIO</Text>
+              <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.300")}>
+                Software Developer III | Aug 2024 - Present | India
+              </Text>
+            </Box>
             <Box>
               <Text fontWeight="bold">LEAD SCHOOL</Text>
               <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.300")}>
-                Software Developer II | Feb 2022 - Present | India
+                Software Developer II | Feb 2022 - Jul 2024 | India
               </Text>
             </Box>
             <Box>
